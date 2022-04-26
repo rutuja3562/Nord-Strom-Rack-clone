@@ -1,4 +1,4 @@
-var mensData = JSON.parse(localStorage.getItem("mensData"));
+var mensData = JSON.parse(localStorage.getItem("mensData"))||[];
 var cartArr = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 displayData(mensData);

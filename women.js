@@ -310,9 +310,9 @@ var womensData = [
 // localStorage.setItem("womensData", JSON.stringify(womensData));
 localStorage.setItem("womensData", JSON.stringify(womensData));
 
-var womensData = JSON.parse(localStorage.getItem("womensData"));
+var womensData = JSON.parse(localStorage.getItem("womensData"))||[];
 var cartArr = JSON.parse(localStorage.getItem("cartItems")) || [];
-
+// console.log(womensData)
 displayData(womensData);
 
 function filterCat() {
@@ -341,12 +341,13 @@ function handlePriceSort() {
       return Number(a.price) - Number(b.price);
     });
   }
-  // console.log(womensData);
+  console.log(womensData);
   displayData(womensData);
 }
 function displayData(womensData) {
+  console.log("womensData",womensData)
   document.querySelector("#wcontainer").innerHTML = "";
-  womensData.map(function (data) {
+  womensData.map( (data)=> {
     var div = document.createElement("div");
 
     var image = document.createElement("img");
